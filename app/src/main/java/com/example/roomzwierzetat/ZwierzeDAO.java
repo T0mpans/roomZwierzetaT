@@ -8,25 +8,24 @@ import androidx.room.Update;
 
 import java.util.List;
 
-public interface ZwierzeDAO {
     @Dao
-    public interface NauczycielDAO {
+    public interface ZwierzeDAO {
         @Insert
-        void wstawNauczycielaDoBazy(Nauczyciel nauczyciel);
+        void wstawZwierzeDoBazy(Zwierze zwierze);
 
         @Insert
-        void wstawListeNauczycieli(Nauczyciel... nauczyciele);
+        void wstawListeNauczycieli(Zwierze... zwierzeta);
 
         @Delete
-        void usunNauczycielaZBazy(Nauczyciel nauczyciel);
+        void usunNauczycielaZBazy(Zwierze zwierze);
 
         @Update
-        void zaktualizujDaneNauczyciela(Nauczyciel nauczyciel);
+        void zaktualizujDaneNauczyciela(Zwierze zwierze);
 
-        @Query("SELECT * from nauczyciele")
-        List<Nauczyciel> zwrocWszystkichNauczycieliZBazy();
+        @Query("SELECT * from zwierzeta")
+        List<Zwierze> zwrocWszystkichNauczycieliZBazy();
 
-        @Query("SELECT imie from nauczyciele WHERE przedmiot = :przedmiotArgument")
-        List<String> zwrocImionaNauczycieliZPrzedmiotu(String przedmiotArgument);
+        @Query("SELECT nazwa from zwierzeta WHERE gatunek = :gatunekArgument")
+        List<String> zwrocImionaNauczycieliZPrzedmiotu(String gatunekArgument);
     }
-}
+
