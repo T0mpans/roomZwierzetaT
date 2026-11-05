@@ -14,7 +14,7 @@ import java.util.List;
         void wstawZwierzeDoBazy(Zwierze zwierze);
 
         @Insert
-        void wstawListeNauczycieli(Zwierze... zwierzeta);
+        void wstawListeZwierzat(Zwierze... zwierzeta);
 
         @Delete
         void usunNauczycielaZBazy(Zwierze zwierze);
@@ -22,8 +22,9 @@ import java.util.List;
         @Update
         void zaktualizujDaneNauczyciela(Zwierze zwierze);
 
+
         @Query("SELECT * from zwierzeta")
-        List<Zwierze> zwrocWszystkichNauczycieliZBazy();
+        List<Zwierze> zwrocWszystkieZwierzetaZBazy();
 
         @Query("SELECT nazwa from zwierzeta WHERE gatunek = :gatunekArgument")
         List<String> zwrocImionaNauczycieliZPrzedmiotu(String gatunekArgument);
