@@ -24,5 +24,6 @@ public class MainActivity extends AppCompatActivity {
         zwierzetaDataBase.getZwierzeDAO().wstawZwierzeDoBazy(
                 new Zwierze("pies", "ssak", 12, true)
         );
+        //dzien3
     }
 }
