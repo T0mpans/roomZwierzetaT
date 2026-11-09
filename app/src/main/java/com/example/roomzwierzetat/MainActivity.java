@@ -87,20 +87,22 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-//        listView.setOnItemClickListener(
-//                new AdapterView.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                        kliknietyNauczyciel = nauczycielList.get(i);
-//                        //wypelniony formularz
-//                        editText.setText(kliknietyNauczyciel.imie);
-//                        ArrayList<String> przedmioty = new ArrayList<>(
-//                                Arrays.asList("wf","plastyka" ,"informatyka" ,"programowanie" ,"fizyka" ,"język angielski","język chiński")
-//                        );
-//                        spinner.setSelection(przedmioty.indexOf(kliknietyNauczyciel.przedmiot));
-//                        buttonAktualizuj.setVisibility(View.VISIBLE);
-//                    }
-//                }
-//        );
+        listView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        kliknieteZwierze = zwierzeList.get(i);
+                        //wypelniony formularz
+                        editText.setText(kliknieteZwierze.nazwa);
+                        editText2.setText(kliknieteZwierze.gatunek);
+                        editText3.setText(kliknieteZwierze.waga+"");
+                        checkBox.setChecked(kliknieteZwierze.czyMiesoZerny);
+
+                        buttonAktualizuj.setVisibility(View.VISIBLE);
+                    }
+                }
+        );
+
+
     }
 }
