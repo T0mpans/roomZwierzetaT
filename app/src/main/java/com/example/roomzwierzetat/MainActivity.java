@@ -2,6 +2,7 @@ package com.example.roomzwierzetat;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,6 +16,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,5 +74,33 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        listView.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        zwierzetaDataBase.getZwierzeDAO().usunZwierzeZBazy(zwierzeList.get(i));
+                        zwierzeList.remove(zwierzeList.get(i));
+                        arrayAdapter.notifyDataSetChanged();
+                        return false;
+                    }
+                }
+        );
+
+//        listView.setOnItemClickListener(
+//                new AdapterView.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                        kliknietyNauczyciel = nauczycielList.get(i);
+//                        //wypelniony formularz
+//                        editText.setText(kliknietyNauczyciel.imie);
+//                        ArrayList<String> przedmioty = new ArrayList<>(
+//                                Arrays.asList("wf","plastyka" ,"informatyka" ,"programowanie" ,"fizyka" ,"język angielski","język chiński")
+//                        );
+//                        spinner.setSelection(przedmioty.indexOf(kliknietyNauczyciel.przedmiot));
+//                        buttonAktualizuj.setVisibility(View.VISIBLE);
+//                    }
+//                }
+//        );
     }
 }

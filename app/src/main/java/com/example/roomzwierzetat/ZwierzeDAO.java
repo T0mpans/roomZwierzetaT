@@ -17,7 +17,7 @@ import java.util.List;
         void wstawListeZwierzat(Zwierze... zwierzeta);
 
         @Delete
-        void usunNauczycielaZBazy(Zwierze zwierze);
+        void usunZwierzeZBazy(Zwierze zwierze);
 
         @Update
         void zaktualizujDaneNauczyciela(Zwierze zwierze);
