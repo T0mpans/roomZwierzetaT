@@ -21,9 +21,7 @@ public class Zwierze {
 
     @Override
     public String toString() {
-        return "Zwierze{" +
-                "nazwa='" + nazwa + '\'' +
-                ", gatunek='" + gatunek + '\'' +
-                '}';
+        return
+                "Nazwa: " + nazwa + ", gatunek: " + gatunek + ", waga: " + waga + ", mięsożerca: " + czyMiesoZerny;
     }
 }
