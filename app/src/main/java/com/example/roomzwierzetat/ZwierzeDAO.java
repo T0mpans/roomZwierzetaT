@@ -20,7 +20,7 @@ import java.util.List;
         void usunZwierzeZBazy(Zwierze zwierze);
 
         @Update
-        void zaktualizujDaneNauczyciela(Zwierze zwierze);
+        void zaktualizujDaneZwierzecia(Zwierze zwierze);
 
 
         @Query("SELECT * from zwierzeta")
